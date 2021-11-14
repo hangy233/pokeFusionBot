@@ -47,14 +47,14 @@ const formatFuseId = ({face = randomId(), base = randomId()}) => {
 const getFusionMessages = ({faceId, baseId}) => [
   {
     content: `Fusing ${getName({id: faceId})}`,
-    embeds: [{ thumbnail: { url: `https://images.alexonsager.net/pokemon/${faceId}.png` } }],
+    embeds: [{ thumbnail: { url: `https://storage.googleapis.com/pokefusion/poke/${faceId}.png` } }],
   },
   {
     content: `and ${getName({id: baseId})}`,
-    embeds: [{ thumbnail: { url: `https://images.alexonsager.net/pokemon/${baseId}.png` } }],
+    embeds: [{ thumbnail: { url: `https://storage.googleapis.com/pokefusion/poke/${baseId}.png` } }],
   },
   `...\nGotcha! ${getFusedName({baseId, faceId})}!`,
-  `https://images.alexonsager.net/pokemon/fused/${baseId}/${baseId}.${faceId}.png`,
+  `https://storage.googleapis.com/pokefusion/fused/${baseId}.${faceId}.png`,
 ];
 
 module.exports = {

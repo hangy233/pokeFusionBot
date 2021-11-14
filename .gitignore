@@ -368,3 +368,7 @@ yarn-debug.log*
 yarn-error.log*
 
 config.json
+
+script.js
+
+assets/
