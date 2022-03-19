@@ -20,3 +20,6 @@ Fuse Bulbasaur and Mew.
 
 #### `!fuse 1 .`
 Fuse Bulbasaur and a random pokemon.
+
+# Privacy Policy
+The application does not store any message content data off-platform(outside of discord).
