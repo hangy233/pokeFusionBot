@@ -27,6 +27,8 @@ const findId = (name) => {
 }
 
 const formatFuseId = ({face = randomId(), base = randomId()}) => {
+  face = face.trim();
+  base = base.trim();
   if (isNaN(parseInt(face, 10))) {
     face = findId(face);
   } else {

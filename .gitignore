@@ -370,5 +370,6 @@ yarn-error.log*
 config.json
 
 script.js
+stats.js
 
 assets/
