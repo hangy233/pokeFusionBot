@@ -14,8 +14,8 @@ module.exports = {
                 .setDescription('Pokemons B you want to fuse')
                 .setRequired(false)),
 	async execute(interaction) {
-        const face = interaction.options.getString('pokemon_a');
-        const base = interaction.options.getString('pokemon_b');
+        const face = interaction.options.getString('pokemon_a') || undefined;
+        const base = interaction.options.getString('pokemon_b') || undefined;
         const {faceId, baseId} = formatFuseId({face, base});
 
         console.log(`Slash fusing ${faceId}, ${baseId}`);

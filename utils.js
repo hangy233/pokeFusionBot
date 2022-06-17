@@ -17,7 +17,7 @@ const getName = ({id, lan = 'en'}) => {
 const findId = (name) => {
   for (let i = 0; i < pokename.length; i++) {
     for (const n of Object.values(pokename[i])) {
-      if (name.toLowerCase() === n.toLowerCase()) {
+      if (name.trim().toLowerCase() === n.toLowerCase()) {
         return i+1;
       }
     }
@@ -27,8 +27,6 @@ const findId = (name) => {
 }
 
 const formatFuseId = ({face = randomId(), base = randomId()}) => {
-  face = face.trim();
-  base = base.trim();
   if (isNaN(parseInt(face, 10))) {
     face = findId(face);
   } else {
