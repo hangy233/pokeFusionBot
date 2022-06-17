@@ -13,9 +13,14 @@ for (const file of commandFiles) {
 }
 
 const rest = new REST({ version: '9' }).setToken(token);
-const guildId = '794291421267623956';
 
-(async () => {
+const deployToGlobal = () => {
+	rest.put(Routes.applicationCommands(clientId), { body: commands })
+		.then(() => console.log('Successfully registered application commands.'))
+		.catch(console.error);
+}
+
+const deployToGuild = (async (guildId) => {
 	try {
 		console.log('Started refreshing application (/) commands.');
 
@@ -28,4 +33,9 @@ const guildId = '794291421267623956';
 	} catch (error) {
 		console.error(error);
 	}
-})();
+});
+
+module.exports = {
+	deployToGlobal,
+	deployToGuild,
+};

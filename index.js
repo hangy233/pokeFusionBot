@@ -3,6 +3,7 @@ const { formatFuseId, getFusionMessages } = require('./utils');
 const { token } = require('./config.json');
 const fs = require('fs');
 const pokename = require('./pokename.json');
+const { deployToGuild } = require('./deploy-commands-helper');
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
 
@@ -44,9 +45,15 @@ client.on('messageCreate', async (message) => {
     const {faceId, baseId} = formatFuseId({face, base});
     console.log(`Prefix fusing ${faceId}, ${baseId}`);
 
+    // await message.channel.send('Text command will be deprecated soon. Please invite me again from https://discord.com/api/oauth2/authorize?client_id=908886131767144529&permissions=0&scope=bot%20applications.commands to allow slash commands :)');
     const messages = getFusionMessages({faceId, baseId});
     messages.forEach(async (m) => await message.channel.send(m));
   }
+});
+
+client.on("guildCreate", guild => {
+  console.log(`invited to ${guild.id}`);
+  deployToGuild(guild.id);
 });
 
 client.login(token);
