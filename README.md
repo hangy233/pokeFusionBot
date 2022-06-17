@@ -8,6 +8,9 @@ The original idea and assets are from Alex Onsager's https://pokemon.alexonsager
 #### `/fuse`
 Fuse two random pokemons.
 
+optional input `pokemon_a`, `pokemon_b`  
+Pokemon that will be fused. Can be a national id or a pokemon name.
+
 ### Message Command
 #### `!fuse`
 Fuse two random pokemons.
